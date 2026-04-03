@@ -60,13 +60,15 @@ struct ImportedGeometryVertex {
   glm::vec3 pos;
   glm::vec3 normal;
   glm::vec2 texCoord;
+  glm::vec4 color{1.0f, 1.0f, 1.0f, 1.0f};
   glm::vec4 tangent = {1.0f, 0.0f, 0.0f, 1.0f};
   glm::uvec4 jointIndices{0, 0, 0, 0};
   glm::vec4 jointWeights{1.0f, 0.0f, 0.0f, 0.0f};
 
   bool operator==(const ImportedGeometryVertex &other) const {
     return pos == other.pos && normal == other.normal &&
-           texCoord == other.texCoord && tangent == other.tangent &&
+           texCoord == other.texCoord && color == other.color &&
+           tangent == other.tangent &&
            jointIndices == other.jointIndices &&
            jointWeights == other.jointWeights;
   }
@@ -78,6 +80,8 @@ template <> struct std::hash<ImportedGeometryVertex> {
     seed ^= hash<glm::vec3>()(vertex.normal) + 0x9e3779b9 + (seed << 6) +
             (seed >> 2);
     seed ^= hash<glm::vec2>()(vertex.texCoord) + 0x9e3779b9 + (seed << 6) +
+            (seed >> 2);
+    seed ^= hash<glm::vec4>()(vertex.color) + 0x9e3779b9 + (seed << 6) +
             (seed >> 2);
     seed ^= hash<glm::vec4>()(vertex.tangent) + 0x9e3779b9 + (seed << 6) +
             (seed >> 2);
