@@ -1,3 +1,4 @@
+#include "assets/CharacterModelAsset.h"
 #include "assets/GltfModelAsset.h"
 #include "assets/ObjModelAsset.h"
 
@@ -19,6 +20,13 @@ static std::unique_ptr<ModelAsset>
 importSceneAsset(const SceneAssetDefinition &definition) {
   const std::string extension =
       std::filesystem::path(definition.assetPath).extension().string();
+  if (extension == ".json" &&
+      std::filesystem::path(definition.assetPath).stem().extension() ==
+          ".character") {
+    auto asset = std::make_unique<CharacterModelAsset>();
+    asset->load(definition.assetPath);
+    return asset;
+  }
 
   if (extension == ".gltf" || extension == ".glb") {
     auto asset = std::make_unique<GltfModelAsset>();
@@ -91,11 +99,11 @@ printImportedAssetSummary(const SceneAssetDefinition &definition,
 }
 
 int main() {
-  const std::filesystem::path assetPath = "assets/tree.glb";
+  const std::filesystem::path assetPath = "assets/character_mannequin.character.json";
   SceneAssetDefinition sceneAsset{
       .name = assetPath.stem().string(),
       .assetPath = assetPath.string(),
-      .baseColorTint = {1.0f, 0.95f, 0.9f, 1.0f},
+      .baseColorTint = {1.0f, 1.0f, 1.0f, 1.0f},
       .preferredAnimationIndex = 0,
   };
 

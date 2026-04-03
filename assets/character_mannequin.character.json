@@ -1,0 +1,112 @@
+{
+  "armConnectorShape": {
+    "baseRadius": 0.12,
+    "lateralFlare": 1.22,
+    "length": 0.16,
+    "tipRadius": 0.08
+  },
+  "armGroup": {
+    "count": 2,
+    "handLength": 0.18,
+    "lowerLength": 0.76,
+    "offset": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "preset": "Slim",
+    "spacing": 0.98,
+    "thickness": 0.18,
+    "tint": [
+      0.82,
+      0.82,
+      0.82,
+      1.0
+    ],
+    "upperLength": 0.74
+  },
+  "footShape": {
+    "ankleScale": 0.5,
+    "height": 0.14,
+    "length": 0.46,
+    "pitchOffset": 0.18,
+    "toeScale": 1.0,
+    "width": 0.2
+  },
+  "handShape": {
+    "height": 0.12,
+    "length": 0.26,
+    "palmScale": 1.0,
+    "taper": 0.4,
+    "width": 0.2,
+    "wristScale": 0.52
+  },
+  "headGroup": {
+    "count": 1,
+    "preset": "Round",
+    "size": [
+      0.52,
+      0.68,
+      0.48
+    ],
+    "spacing": 0.7,
+    "offset": [
+      0.0,
+      0.12,
+      0.0
+    ],
+    "tint": [
+      0.86,
+      0.86,
+      0.86,
+      1.0
+    ]
+  },
+  "legConnectorShape": {
+    "baseRadius": 0.14,
+    "lateralFlare": 1.28,
+    "length": 0.2,
+    "tipRadius": 0.09
+  },
+  "legGroup": {
+    "count": 2,
+    "preset": "Standard",
+    "upperLength": 1.02,
+    "lowerLength": 0.96,
+    "footLength": 0.42,
+    "thickness": 0.2,
+    "spacing": 0.64,
+    "offset": [
+      0.0,
+      0.0,
+      0.0
+    ],
+    "tint": [
+      0.82,
+      0.82,
+      0.82,
+      1.0
+    ]
+  },
+  "name": "Character Mannequin",
+  "pelvisShape": {
+    "bottomScale": 1.0,
+    "depth": 0.34,
+    "forwardOffset": 0.02,
+    "height": 0.3,
+    "topScale": 0.72,
+    "width": 0.64
+  },
+  "torsoDimensions": {
+    "width": 0.74,
+    "height": 1.06,
+    "depth": 0.34
+  },
+  "torsoPreset": "Box",
+  "torsoTint": [
+    0.78,
+    0.78,
+    0.78,
+    1.0
+  ]
+}

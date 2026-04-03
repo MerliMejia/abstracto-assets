@@ -84,6 +84,8 @@ endif()
 add_library(
   abstracto_assets
   STATIC
+    src/CharacterModelAsset.cpp
+    src/CharacterRecipeGenerator.cpp
     src/GltfModelAsset.cpp
     src/StbImageImplementation.cpp
     src/TinyObjLoaderImplementation.cpp
